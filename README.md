@@ -14,7 +14,7 @@ I build clean, fast websites and handle IT for small businesses, churches, and n
 **Type:** Church website, full build
 **Stack:** HTML, CSS, vanilla JavaScript, Netlify, Netlify Functions
 
-![Fountain of Life website on desktop and mobile](assets/fountain-of-life/showcase-desktop-mobile.jpg)
+![Fountain of Life website on desktop and mobile](showcase-desktop-mobile.jpg)
 
 A complete website for a church in Mesa, Arizona. The goal was a site that feels as welcoming as walking through the front doors: easy for first-time visitors to plan a visit, and easy for members to find service times, ministries, and ways to get involved.
 
@@ -27,11 +27,11 @@ A complete website for a church in Mesa, Arizona. The goal was a site that feels
 - Built for phones first, so it looks right on any screen size
 - Service times, ministries, giving, FAQ, and contact info all on clearly organized pages
 
-[Read the full case study →](projects/fountain-of-life.md)
+[Read the full case study →](fountain-of-life.md)
 
 | | |
 |---|---|
-| ![Page sections](assets/fountain-of-life/showcase-pages.jpg) | ![Mobile views](assets/fountain-of-life/showcase-mobile.jpg) |
+| ![Page sections](showcase-pages.jpg) | ![Mobile views](showcase-mobile.jpg) |
 
 ---
 
