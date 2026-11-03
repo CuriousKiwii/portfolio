@@ -5,9 +5,9 @@
 **Role:** Design, development, and deployment
 **Stack:** HTML, CSS, vanilla JavaScript, Netlify, Netlify Functions
 
-[← Back to portfolio](../README.md)
+[← Back to portfolio](README.md)
 
-![Homepage](../assets/fountain-of-life/homepage.jpg)
+![Homepage](homepage.jpg)
 
 ## The Goal
 
@@ -21,22 +21,22 @@ The homepage opens with full-screen video from a real service, a "Live every Sun
 ### Information that's easy to find
 Service times (Sunday School, Sunday Service, the Spanish-language congregation, and Wednesday night small groups) sit on clean cards with the address and a directions link. A "Your First Visit" section walks newcomers through what to expect, step by step.
 
-![Page sections](../assets/fountain-of-life/showcase-pages.jpg)
+![Page sections](showcase-pages.jpg)
 
 ### Ministries and community
 A "Find Your Community" section highlights small groups, youth and kids, healing rooms, the worship team, the mission kitchen, and outreach, so people can see where they fit.
 
-![Ministries section](../assets/fountain-of-life/ministries.jpg)
+![Ministries section](ministries.jpg)
 
 ### Photos that show real life at the church
 A photo gallery and a "See What God Is Doing" section show worship, outreach, and events, so visitors get a feel for the church before they visit.
 
-![Gallery section](../assets/fountain-of-life/gallery-section.jpg)
+![Gallery section](gallery-section.jpg)
 
 ### Built for phones first
 Most visitors find a church on their phone, so every section was designed to work on small screens first and scale up to desktop.
 
-![Mobile views](../assets/fountain-of-life/showcase-mobile.jpg)
+![Mobile views](showcase-mobile.jpg)
 
 ## Technical Details
 
