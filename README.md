@@ -38,7 +38,7 @@ A complete website for a church in Mesa, Arizona. The goal was a site that feels
 ## Services
 
 - **Website builds and redesigns** for small businesses, churches, and nonprofits
-- **Finishing and fixing existing sites** on Pixieset, Squarespace, Wix, and WordPress
+- **Finishing and fixing existing sites**, from quick updates to full cleanups
 - **IT and security help:** email setup, account security, and Microsoft 365 / Google Workspace
 
 ## Background
