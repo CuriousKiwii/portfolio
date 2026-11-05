@@ -86,6 +86,7 @@ legacy/         the previous single-page portfolio
 
 ## Background
 
+- Associate NOC Analyst at Carvana (Tempe, AZ) since September 2025
 - CompTIA Security+
-- B.S. in Cybersecurity and M.S. in Artificial Intelligence (in progress)
+- B.S. in Cybersecurity (in progress)
 - Technical Lead at Fountain of Life Christian Fellowship since 2019 (IT infrastructure, AV and livestream production, security hardening)

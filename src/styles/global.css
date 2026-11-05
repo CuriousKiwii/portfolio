@@ -20,19 +20,19 @@
   default: true;
   prefersdark: true;
   color-scheme: dark;
-  --color-base-100: #0b1220;
-  --color-base-200: #111a2e;
-  --color-base-300: #1a2540;
-  --color-base-content: #eef2f8;
-  --color-primary: #f0a23b;
-  --color-primary-content: #1b1205;
-  --color-secondary: #3bb6e8;
-  --color-secondary-content: #04121a;
-  --color-accent: #f0a23b;
-  --color-accent-content: #1b1205;
-  --color-neutral: #141e33;
-  --color-neutral-content: #eef2f8;
-  --color-info: #3bb6e8;
+  --color-base-100: #030f18;
+  --color-base-200: #071a2a;
+  --color-base-300: #0d2639;
+  --color-base-content: #fafbfc;
+  --color-primary: #43b7ff;
+  --color-primary-content: #001f3f;
+  --color-secondary: #dbe7f1;
+  --color-secondary-content: #001f3f;
+  --color-accent: #43b7ff;
+  --color-accent-content: #001f3f;
+  --color-neutral: #0a1d2c;
+  --color-neutral-content: #fafbfc;
+  --color-info: #43b7ff;
   --color-success: #34d399;
   --color-warning: #f59e0b;
   --color-error: #f87171;
@@ -48,19 +48,19 @@
 @plugin "daisyui/theme" {
   name: "goodground-light";
   color-scheme: light;
-  --color-base-100: #f7f8fb;
-  --color-base-200: #eef1f6;
-  --color-base-300: #e2e7ef;
-  --color-base-content: #0b1220;
-  --color-primary: #c97a12;
+  --color-base-100: #f7fafd;
+  --color-base-200: #edf3f9;
+  --color-base-300: #dce7f1;
+  --color-base-content: #0a1a2a;
+  --color-primary: #001f3f;
   --color-primary-content: #ffffff;
-  --color-secondary: #1c8bbe;
+  --color-secondary: #1a8fd8;
   --color-secondary-content: #ffffff;
-  --color-accent: #c97a12;
+  --color-accent: #0f7fc8;
   --color-accent-content: #ffffff;
-  --color-neutral: #e9edf4;
-  --color-neutral-content: #0b1220;
-  --color-info: #1c8bbe;
+  --color-neutral: #e6eef6;
+  --color-neutral-content: #0a1a2a;
+  --color-info: #1a8fd8;
   --color-success: #059669;
   --color-warning: #d97706;
   --color-error: #dc2626;
@@ -127,25 +127,25 @@
 
   /* Soft-UI shadows generated with neumorphism.io (distance 12, blur 24, intensity 0.15) */
   .neu {
-    background: #141e33;
+    background: #0a1d2c;
     box-shadow:
-      12px 12px 24px #11192b,
-      -12px -12px 24px #17223a;
+      12px 12px 24px #081925,
+      -12px -12px 24px #0b2133;
   }
   [data-theme="goodground-light"] .neu {
-    background: #eef1f6;
+    background: #edf3f9;
     box-shadow:
-      12px 12px 24px #caccd1,
+      12px 12px 24px #c9ced4,
       -12px -12px 24px #ffffff;
   }
   .neu-inset {
     box-shadow:
-      inset 6px 6px 12px #0c1424,
-      inset -6px -6px 12px #18233c;
+      inset 6px 6px 12px #06111a,
+      inset -6px -6px 12px #0c2335;
   }
   [data-theme="goodground-light"] .neu-inset {
     box-shadow:
-      inset 6px 6px 12px #caccd1,
+      inset 6px 6px 12px #c9ced4,
       inset -6px -6px 12px #ffffff;
   }
 
@@ -244,7 +244,7 @@
   filter: invert(1) hue-rotate(200deg) brightness(0.85) contrast(0.9) saturate(0.6);
 }
 [data-theme="goodground"] #map .leaflet-container {
-  background: #0b1220;
+  background: #030f18;
 }
 
 /* Shiki (Astro <Code>) dual themes follow the site theme */
@@ -265,4 +265,19 @@
 .ct-chart .ct-series-a .ct-bar {
   stroke: var(--color-secondary);
   stroke-width: 22px;
+}
+
+/* Oak Harbor style buttons in dark mode: silver gradient with a soft blue glow */
+[data-theme="goodground"] .btn-primary {
+  background-image: linear-gradient(45deg, #cecece 0%, #ffffff 100%);
+  border-color: transparent;
+  color: #001f3f;
+  box-shadow:
+    0 0 24px rgba(67, 183, 255, 0.2),
+    0 0 39px rgba(67, 183, 255, 0.2);
+}
+[data-theme="goodground"] .btn-primary:hover {
+  box-shadow:
+    0 0 24px rgba(67, 183, 255, 0.45),
+    0 0 48px rgba(67, 183, 255, 0.35);
 }

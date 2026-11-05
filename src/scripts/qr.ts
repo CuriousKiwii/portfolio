@@ -11,7 +11,7 @@ export default function qr(canvas: HTMLCanvasElement) {
       size: 360,
       level: "M",
       background: "#ffffff",
-      foreground: isLight() ? "#0b1220" : "#111a2e",
+      foreground: isLight() ? "#001f3f" : "#030f18",
       padding: 16,
     });
   draw();

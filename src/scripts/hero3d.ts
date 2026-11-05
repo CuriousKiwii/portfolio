@@ -14,8 +14,8 @@ export default function hero3d(canvas: HTMLCanvasElement) {
   const count = window.innerWidth < 640 ? 900 : 1800;
   const pos = new Float32Array(count * 3);
   const col = new Float32Array(count * 3);
-  const amber = new THREE.Color("#f0a23b");
-  const cyan = new THREE.Color("#3bb6e8");
+  const amber = new THREE.Color("#fafbfc");
+  const cyan = new THREE.Color("#43b7ff");
   for (let i = 0; i < count; i++) {
     const x = (Math.random() - 0.5) * 34;
     const z = (Math.random() - 0.5) * 20;

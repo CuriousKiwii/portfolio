@@ -115,7 +115,7 @@ document.querySelectorAll<HTMLElement>("[data-burst]").forEach((el) =>
       count: 12,
       children: {
         shape: ["circle", "polygon"],
-        fill: ["#f0a23b", "#3bb6e8", "#eef2f8"],
+        fill: ["#43b7ff", "#9fd8ff", "#fafbfc"],
         radius: { 7: 0 },
         duration: 800,
       },
@@ -137,7 +137,7 @@ document.querySelectorAll<HTMLElement>("[data-start-project]").forEach((el) =>
       cancelButtonText: "Not yet",
       background: getComputedStyle(document.body).backgroundColor,
       color: getComputedStyle(document.body).color,
-      confirmButtonColor: "#f0a23b",
+      confirmButtonColor: "#43b7ff",
     });
     if (res.isConfirmed) window.open(el.dataset.startProject, "_blank", "noopener");
   }),

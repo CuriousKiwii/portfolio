@@ -21,5 +21,5 @@ export default function map(el: HTMLElement) {
       .bindPopup(`<strong>${p.name}</strong><br>${p.detail}`);
   });
   m.fitBounds(L.featureGroup(pts).getBounds().pad(0.6));
-  L.circle([33.42, -111.94], { radius: 38000, color: "#f0a23b", weight: 1, fillOpacity: 0.06 }).addTo(m);
+  L.circle([33.42, -111.94], { radius: 38000, color: "#43b7ff", weight: 1, fillOpacity: 0.06 }).addTo(m);
 }

@@ -13,18 +13,18 @@ export default async function diagrams(nodes: HTMLElement[]) {
       themeVariables: light
         ? {
             primaryColor: "#ffffff",
-            primaryBorderColor: "#c97a12",
-            primaryTextColor: "#0b1220",
-            lineColor: "#1c8bbe",
-            tertiaryColor: "#eef1f6",
+            primaryBorderColor: "#001f3f",
+            primaryTextColor: "#0a1a2a",
+            lineColor: "#1a8fd8",
+            tertiaryColor: "#edf3f9",
           }
         : {
-            primaryColor: "#141e33",
-            primaryBorderColor: "#f0a23b",
-            primaryTextColor: "#eef2f8",
-            lineColor: "#3bb6e8",
-            tertiaryColor: "#111a2e",
-            edgeLabelBackground: "#0b1220",
+            primaryColor: "#0a1d2c",
+            primaryBorderColor: "#43b7ff",
+            primaryTextColor: "#fafbfc",
+            lineColor: "#9fd8ff",
+            tertiaryColor: "#071a2a",
+            edgeLabelBackground: "#030f18",
           },
       flowchart: { curve: "basis", padding: 14 },
     });

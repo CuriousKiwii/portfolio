@@ -13,7 +13,7 @@ export default function charts(els: HTMLElement[]) {
   for (const el of els) {
     const chart = echarts.init(el, null, { renderer: "svg" });
     const draw = () => {
-      const fg = isLight() ? "#0b1220" : "#eef2f8";
+      const fg = isLight() ? "#0a1a2a" : "#fafbfc";
       const muted = isLight() ? "#5b6478" : "#a3aec4";
       const rows = metrics.images;
       chart.setOption(
@@ -26,7 +26,7 @@ export default function charts(els: HTMLElement[]) {
           xAxis: {
             type: "value",
             axisLabel: { color: muted, formatter: "{value} KB" },
-            splitLine: { lineStyle: { color: isLight() ? "#e2e7ef" : "#1a2540" } },
+            splitLine: { lineStyle: { color: isLight() ? "#dce7f1" : "#0d2639" } },
           },
           yAxis: { type: "category", data: rows.map((r) => r.name), axisLabel: { color: muted }, inverse: true },
           series: [
@@ -40,13 +40,13 @@ export default function charts(els: HTMLElement[]) {
               name: "Desktop version",
               type: "bar",
               data: rows.map((r) => kb(r.desktop)),
-              itemStyle: { color: "#f0a23b", borderRadius: 4 },
+              itemStyle: { color: "#43b7ff", borderRadius: 4 },
             },
             {
               name: "Phone version",
               type: "bar",
               data: rows.map((r) => kb(r.mobile)),
-              itemStyle: { color: "#3bb6e8", borderRadius: 4 },
+              itemStyle: { color: isLight() ? "#001f3f" : "#fafbfc", borderRadius: 4 },
             },
           ],
         },

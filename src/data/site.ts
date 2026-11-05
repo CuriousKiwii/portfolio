@@ -23,7 +23,7 @@ export const stats = [
   },
   { id: "sites", value: 2, suffix: "", label: "Client websites live", engine: "odometer" },
   { id: "cert", value: 1, suffix: "", label: "CompTIA Security+ certification", engine: "countup" },
-  { id: "degrees", value: 2, suffix: "", label: "Degrees in progress (Cyber + AI)", engine: "countup" },
+  { id: "degrees", value: 1, suffix: "", label: "Degree in progress (B.S. Cybersecurity)", engine: "countup" },
 ];
 
 /** Short explanations shown in tooltips on tech badges. */
@@ -179,9 +179,9 @@ export const mapPoints = [
 ];
 
 export const credentials = [
+  { title: "Associate NOC Analyst", detail: "Carvana, Tempe, AZ, since Sep 2025" },
   { title: "CompTIA Security+", detail: "Certified" },
   { title: "B.S. Cybersecurity", detail: "In progress" },
-  { title: "M.S. Artificial Intelligence", detail: "In progress" },
   { title: "Technical Lead", detail: "Fountain of Life Christian Fellowship, since 2019" },
 ];
 
