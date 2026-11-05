@@ -1,0 +1,82 @@
+---
+import { profile } from "../data/site";
+import { u } from "../lib/url";
+const nav = [
+  { label: "Work", href: "/#work", icon: "briefcase" },
+  { label: "Process", href: "/#process", icon: "git-branch" },
+  { label: "Services", href: "/#services", icon: "tool" },
+  { label: "About", href: "/#about", icon: "user" },
+  { label: "Contact", href: "/#contact", icon: "send" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-base-content/5 bg-base-100/80 backdrop-blur-md">
+  <div class="navbar section min-h-16 gap-2">
+    <div class="navbar-start">
+      <a
+        href={u("/")}
+        class="flex items-center gap-2 text-lg font-bold font-display"
+        aria-label={`${profile.name} home`}
+      >
+        <span class="grid size-8 place-items-center rounded-lg bg-primary text-primary-content">
+          <span class="icon-[lucide--sprout] size-5"></span>
+        </span>
+        <span>
+          Noah<span class="text-primary">.</span>
+        </span>
+      </a>
+    </div>
+
+    <nav class="navbar-center hidden lg:flex" aria-label="Main">
+      <ul class="menu menu-horizontal gap-1 px-1">
+        {nav.map((n) => (
+          <li>
+            <a href={u(n.href)} class="flex items-center gap-2 text-sm">
+              <i data-feather={n.icon} class="size-4" aria-hidden="true" />
+              <span class="hvr-underline-from-left">{n.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="navbar-end gap-1">
+      <button id="tour-btn" class="btn btn-ghost btn-sm hidden sm:inline-flex" data-tip="Take a 30-second guided tour">
+        <span class="icon-[lucide--map] size-4"></span> Tour
+      </button>
+      <label class="btn btn-ghost btn-sm btn-square swap swap-rotate" aria-label="Toggle light and dark mode">
+        <input id="theme-toggle" type="checkbox" />
+        <span class="swap-off icon-[lucide--moon] size-5"></span>
+        <span class="swap-on icon-[lucide--sun] size-5"></span>
+      </label>
+      <a
+        href={profile.fiverr}
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary btn-sm fx-shine hidden sm:inline-flex"
+      >
+        <span class="icon-[lucide--briefcase-business] size-4"></span> Hire me
+      </a>
+      <div class="dropdown dropdown-end lg:hidden">
+        <button tabindex="0" class="btn btn-ghost btn-sm btn-square" aria-label="Open menu">
+          <i data-feather="menu" aria-hidden="true"></i>
+        </button>
+        <ul tabindex="0" class="dropdown-content menu z-50 mt-3 w-56 rounded-box bg-base-200 p-2 shadow-xl">
+          {nav.map((n) => (
+            <li>
+              <a href={u(n.href)}>
+                <i data-feather={n.icon} class="size-4" aria-hidden="true" />
+                {n.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href={profile.fiverr} target="_blank" rel="noopener" class="text-primary">
+              Hire me on Fiverr
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

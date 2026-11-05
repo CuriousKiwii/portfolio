@@ -1,0 +1,473 @@
+---
+import Base from "../layouts/Base.astro";
+import Img from "../components/Img.astro";
+import images from "../data/images.json";
+import { profile, stats, projects, techNotes, services, processDiagram, credentials } from "../data/site";
+import { u } from "../lib/url";
+
+const imgs = images as Record<string, { src: string; width: number; height: number }>;
+const headline = ["Websites", "that", "look", "great,", "run", "fast,", "and", "are", "secure", "from", "day", "one."];
+---
+
+<Base>
+  <!-- HERO -->
+  <section id="hero" class="relative isolate overflow-hidden" aria-labelledby="hero-title">
+    <canvas
+      id="hero-canvas"
+      class="absolute inset-0 -z-10 h-full w-full opacity-0 transition-opacity duration-1000"
+      aria-hidden="true"
+    ></canvas>
+    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+      <div
+        data-rellax
+        data-rellax-speed="-2"
+        class="absolute -top-24 -left-24 size-96 rounded-full bg-primary/15 blur-3xl"
+      ></div>
+      <div
+        data-rellax
+        data-rellax-speed="3"
+        class="absolute top-40 -right-24 size-80 rounded-full bg-secondary/15 blur-3xl"
+      ></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-base-100 to-transparent"></div>
+    </div>
+
+    <div class="section grid items-center gap-12 py-20 md:py-28 lg:grid-cols-[1.25fr_1fr]">
+      <div>
+        <span class="badge badge-outline badge-primary gap-2 py-3 animate__animated animate__fadeInUp">
+          <span class="icon-[lucide--sprout] size-4"></span>
+          {profile.tagline}
+        </span>
+        <h1 id="hero-title" data-hero-title class="mt-5 text-4xl leading-[1.08] font-bold sm:text-5xl lg:text-6xl">
+          {headline
+            .map((w) =>
+              w === "secure" ? (
+                <span class="relative inline-block text-primary italic" data-sketch>
+                  <span data-word class="inline-block opacity-0">
+                    {w}
+                  </span>
+                </span>
+              ) : (
+                <span data-word class="inline-block opacity-0">
+                  {w}
+                </span>
+              ),
+            )
+            .reduce((acc: any[], el, i) => (i ? [...acc, " ", el] : [el]), [])}
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-base-content/75">
+          I build and finish websites for small businesses, churches, and nonprofits. I also work in cybersecurity, so
+          everything I build is set up safely from the start.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#work" class="btn btn-primary btn-lg fx-shine hvr-grow-shadow" data-burst>
+            See my work <span class="icon-[lucide--arrow-down] size-5"></span>
+          </a>
+          <button class="btn btn-outline btn-lg hvr-icon-forward" data-start-project={profile.fiverr}>
+            Start a project <span class="icon-[lucide--arrow-right] hvr-icon size-5"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Floating status card (Theatre.js) with Lottie shield -->
+      <div class="relative mx-auto w-full max-w-sm" aria-hidden="true">
+        <div
+          id="status-card"
+          class="neu rounded-[2rem] p-6 will-change-transform"
+          style="box-shadow: 12px 12px 24px #11192b, -12px -12px 24px #17223a, 0 0 calc(var(--glow, .3) * 60px) color-mix(in oklab, var(--color-primary) 35%, transparent)"
+        >
+          <div class="flex items-center gap-4">
+            <div data-lottie={u("/lottie/secure-shield.json")} class="size-20 shrink-0"></div>
+            <div>
+              <p class="text-xs font-semibold tracking-widest text-secondary uppercase">Site check</p>
+              <p class="font-display text-xl font-bold">All systems secure</p>
+            </div>
+          </div>
+          <ul class="mt-5 space-y-2 text-sm">
+            {[
+              "HTTPS + custom domain",
+              "Mobile-first and fast",
+              "No plugins to patch",
+              "You can update it yourself",
+            ].map((t) => (
+              <li class="neu-inset flex items-center gap-2 rounded-xl px-3 py-2">
+                <span class="icon-[lucide--circle-check] size-4 text-success"></span>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS (countUp.js + Odometer) -->
+  <section id="stats" class="section -mt-6 pb-8" aria-label="Quick stats">
+    <div class="stats stats-vertical w-full bg-base-200 shadow-xl sm:stats-horizontal" data-reveal>
+      {stats.map((s) => (
+        <div class="stat place-items-center text-center" data-stagger>
+          <div class="stat-value font-display text-primary">
+            {s.engine === "odometer" ? (
+              <span class="odometer" data-odometer={s.value}>
+                0
+              </span>
+            ) : (
+              <span data-countup={s.value} data-suffix={s.suffix}>
+                0
+              </span>
+            )}
+          </div>
+          <div class="stat-desc text-sm whitespace-normal text-base-content/70">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- WORK (List.js + PhotoSwipe / Spotlight + Popper) -->
+  <section id="work" class="section py-20" aria-labelledby="work-title">
+    <div data-reveal>
+      <p class="eyebrow">Featured work</p>
+      <h2 id="work-title" class="mt-2 text-3xl font-bold md:text-4xl">
+        Real sites, live on the web
+      </h2>
+      <p class="mt-3 max-w-2xl text-base-content/70">
+        Built for real organizations. Search, filter, or tap any image for a full-screen gallery.
+      </p>
+    </div>
+
+    <div id="projects-list" class="mt-8">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <label class="fx-underline block w-full max-w-sm">
+          <span class="sr-only">Search projects</span>
+          <input class="search" type="search" placeholder="Search projects, clients, or tech…" />
+          <span></span>
+        </label>
+        <div class="join" role="group" aria-label="Filter projects">
+          <button class="btn join-item btn-sm btn-active" data-filter="all">
+            All
+          </button>
+          <button class="btn join-item btn-sm" data-filter="Sports">
+            Sports
+          </button>
+          <button class="btn join-item btn-sm" data-filter="Church">
+            Church
+          </button>
+        </div>
+      </div>
+
+      <ul class="list mt-8 grid gap-10">
+        {projects.map((p, idx) => (
+          <li class="card-surface overflow-hidden" data-reveal>
+            <span class="title hidden">{p.title}</span>
+            <span class="client hidden">{p.client}</span>
+            <span class="category hidden">{p.category}</span>
+            <span class="stack hidden">{p.stack.join(" ")}</span>
+            <div class:list={["grid gap-0 lg:grid-cols-2", idx % 2 ? "lg:[&>*:first-child]:order-2" : ""]}>
+              <div class="bg-base-300 p-4 sm:p-6" data-gallery={p.lightbox}>
+                {p.gallery.map((g, i) => {
+                  const im = imgs[g];
+                  const attrs =
+                    p.lightbox === "photoswipe"
+                      ? { "data-pswp-width": im.width, "data-pswp-height": im.height }
+                      : { "data-spotlight": "", "data-title": p.title };
+                  return (
+                    <a
+                      href={u(im.src)}
+                      {...attrs}
+                      class:list={[
+                        "group block overflow-hidden rounded-xl",
+                        i === 0 ? "mb-3 hvr-grow-shadow" : "hidden",
+                      ]}
+                      aria-label={`Open ${p.title} gallery, image ${i + 1}`}
+                    >
+                      {i === 0 && (
+                        <Img
+                          id={g}
+                          alt={`${p.title} screenshots`}
+                          class="w-full transition duration-500 group-hover:scale-[1.02]"
+                        />
+                      )}
+                    </a>
+                  );
+                })}
+                <div class="grid grid-cols-4 gap-2">
+                  {p.gallery.slice(1, 5).map((g, i) => (
+                    <button
+                      type="button"
+                      class="filter-clarendon overflow-hidden rounded-lg ring-1 ring-base-content/10 transition hover:ring-primary"
+                      aria-label={`Open image ${i + 2}`}
+                      onclick={`this.closest('[data-gallery]').querySelectorAll('a')[${i + 1}].click()`}
+                    >
+                      <Img id={g} alt="" class="aspect-[4/3] w-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-4 p-6 sm:p-8">
+                <span class="badge badge-ghost">{p.type}</span>
+                <h3 class="text-2xl font-bold">{p.title}</h3>
+                <p class="text-base-content/75">{p.summary}</p>
+                <div class="flex flex-wrap gap-2">
+                  {p.stack.map((s) => (
+                    <span
+                      class="badge badge-outline badge-secondary cursor-help"
+                      tabindex="0"
+                      data-tip={techNotes[s] || s}
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <ul class="space-y-2 text-sm">
+                  {p.highlights.map((h) => (
+                    <li class="flex gap-2">
+                      <span class="icon-[lucide--check] mt-0.5 size-4 shrink-0 text-primary" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+                <div class="mt-auto flex flex-wrap gap-3 pt-2">
+                  <a href={p.url} target="_blank" rel="noopener" class="btn btn-primary fx-shine">
+                    Visit {p.urlLabel} <span class="icon-[lucide--external-link] size-4" />
+                  </a>
+                  <a href={u(`/work/${p.slug}/`)} class="btn btn-ghost hvr-icon-forward">
+                    Read case study <span class="icon-[lucide--arrow-right] hvr-icon size-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p data-empty class="hidden py-10 text-center text-base-content/60">
+        No projects match that search yet.
+      </p>
+    </div>
+  </section>
+
+  <!-- GITHUB (Primer CSS in shadow DOM) -->
+  <section id="github" class="section pb-20" aria-labelledby="gh-title">
+    <div class="flex flex-wrap items-end justify-between gap-3" data-reveal>
+      <div>
+        <p class="eyebrow">Open source</p>
+        <h2 id="gh-title" class="mt-2 text-3xl font-bold">
+          The code is on GitHub
+        </h2>
+      </div>
+      <a href={profile.github} target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+        <i class="fa-brands fa-github"></i> @CuriousKiwii
+      </a>
+    </div>
+    <primer-repos class="mt-6 block min-h-32"></primer-repos>
+  </section>
+
+  <!-- PROCESS (Mermaid) -->
+  <section id="process" class="bg-base-200 py-20" aria-labelledby="process-title">
+    <div class="section">
+      <div data-reveal>
+        <p class="eyebrow">How it works</p>
+        <h2 id="process-title" class="mt-2 text-3xl font-bold md:text-4xl">
+          A simple path from idea to launch
+        </h2>
+        <p class="mt-3 max-w-2xl text-base-content/70">
+          Every project starts with a short questionnaire, so the site uses your real details. Nothing goes live until
+          you approve it, and the old site is always backed up first.
+        </p>
+      </div>
+      <div class="card-surface mt-8 overflow-x-auto bg-base-100 p-6" data-reveal>
+        <pre class="mermaid min-w-[640px] text-center">{processDiagram}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (clay.css + Ionicons via jsDelivr + Hover.css) -->
+  <section id="services" class="section py-20" aria-labelledby="services-title">
+    <div data-reveal>
+      <p class="eyebrow">What I can help with</p>
+      <h2 id="services-title" class="mt-2 text-3xl font-bold md:text-4xl">
+        Help for organizations without an IT department
+      </h2>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-3" data-reveal>
+      {services.map((s, i) => (
+        <article class="clay hvr-float p-7" data-stagger>
+          <div class="flex items-center justify-between">
+            <ion-icon name={s.icon} class="text-4xl text-primary" aria-hidden="true" />
+            <span class="font-display text-sm text-base-content/40">0{i + 1}</span>
+          </div>
+          <h3 class="mt-5 text-xl font-bold">{s.title}</h3>
+          <p class="mt-2 text-base-content/75">{s.body}</p>
+        </article>
+      ))}
+    </div>
+    <div class="card-surface mt-10 p-6" data-reveal>
+      <p class="mb-4 text-center text-sm font-semibold tracking-widest text-base-content/60 uppercase">My toolbox</p>
+      <bulma-toolbox class="block min-h-24"></bulma-toolbox>
+    </div>
+  </section>
+
+  <!-- FREE TOOL (Compressor.js + Instagram.css + CSS loader) -->
+  <section id="tool" class="bg-base-200 py-20" aria-labelledby="tool-title">
+    <div class="section grid items-start gap-10 lg:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">Free tool</p>
+        <h2 id="tool-title" class="mt-2 text-3xl font-bold md:text-4xl">
+          Shrink a photo for your website
+        </h2>
+        <p class="mt-3 text-base-content/75">
+          Big photos are the number one reason small business websites load slowly. Drop one in and get a web-ready
+          version in seconds. Your photo never leaves your device; everything runs in your browser.
+        </p>
+        <div class="mt-6 space-y-5">
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            class="file-input file-input-primary w-full"
+            aria-label="Choose a photo"
+          />
+          <label class="block">
+            <span class="flex justify-between text-sm">
+              <span>Quality</span>
+              <span data-quality>70%</span>
+            </span>
+            <input
+              name="quality"
+              type="range"
+              min="0.3"
+              max="0.95"
+              step="0.05"
+              value="0.7"
+              class="range range-primary range-sm mt-2"
+            />
+          </label>
+          <label class="block">
+            <span class="text-sm">Preview a photo filter (Instagram.css)</span>
+            <select name="filter" class="select mt-2 w-full">
+              <option value="">None</option>
+              <option value="filter-clarendon">Clarendon</option>
+              <option value="filter-juno">Juno</option>
+              <option value="filter-lark">Lark</option>
+              <option value="filter-valencia">Valencia</option>
+              <option value="filter-inkwell">Inkwell</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="card-surface min-h-64 bg-base-100 p-6" data-reveal>
+        <div data-loading class="hidden py-16 text-center text-primary">
+          <div class="loader-bars mx-auto text-[6px]">Working…</div>
+        </div>
+        <div data-result class="hidden space-y-4">
+          <div data-frame class="relative overflow-hidden rounded-box">
+            <img data-preview alt="Compressed preview" class="w-full" />
+          </div>
+          <div class="stats w-full bg-base-200">
+            <div class="stat py-3">
+              <div class="stat-title">Before</div>
+              <div class="stat-value text-xl" data-before></div>
+            </div>
+            <div class="stat py-3">
+              <div class="stat-title">After</div>
+              <div class="stat-value text-xl text-primary" data-after></div>
+            </div>
+          </div>
+          <p class="text-center font-semibold text-success" data-saved></p>
+          <a data-download class="btn btn-primary w-full fx-shine">
+            Download web-ready photo
+          </a>
+        </div>
+        <div class="py-16 text-center text-base-content/50 [[data-result]:not(.hidden)~&]:hidden">
+          <span class="icon-[lucide--image-down] size-12"></span>
+          <p class="mt-2">Your result shows up here</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + MAP (Leaflet) -->
+  <section id="about" class="section py-20" aria-labelledby="about-title">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">About me</p>
+        <h2 id="about-title" class="mt-2 text-3xl font-bold md:text-4xl">
+          Hi, I'm Noah
+        </h2>
+        <p class="mt-4 text-base-content/80">
+          I'm a web and IT professional based in {profile.location}. Since 2019 I've been the Technical Lead at Fountain
+          of Life Christian Fellowship, where I handle everything from IT infrastructure and security to livestream
+          production.
+        </p>
+        <p class="mt-4 text-base-content/80">
+          My background in cybersecurity shapes how I build. Every site I make is designed to be easy to use and safe to
+          run, and I always make sure you can update it yourself.
+        </p>
+        <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+          {credentials.map((c) => (
+            <li class="card-surface p-4" data-tip={c.detail} tabindex="0">
+              <p class="font-semibold">{c.title}</p>
+              <p class="text-sm text-base-content/60">{c.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div data-reveal>
+        <div
+          id="map"
+          class="h-80 overflow-hidden rounded-box border border-base-content/10 lg:h-full lg:min-h-96"
+          role="img"
+          aria-label="Map of the Phoenix area showing Gilbert, Mesa, and Phoenix"
+        ></div>
+        <p class="mt-2 text-xs text-base-content/50">Serving the Phoenix area in person, and anywhere online.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (neumorphism + clipboard.js + toastr + QRious + SweetAlert2 + mo.js) -->
+  <section id="contact" class="bg-base-200 py-20" aria-labelledby="contact-title">
+    <div class="section">
+      <div class="neu grid items-center gap-10 rounded-[2rem] p-8 md:grid-cols-[1.4fr_1fr] md:p-12" data-reveal>
+        <div>
+          <p class="eyebrow">Let's work together</p>
+          <h2 id="contact-title" class="mt-2 text-3xl font-bold md:text-4xl">
+            Let's build something <span class="fx-highlight">together</span>
+          </h2>
+          <p class="mt-4 text-base-content/75">
+            Need a new website, a finished one, or help with IT? Send me a message on Fiverr and we'll figure out the
+            best fit.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href={profile.fiverr}
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary btn-lg fx-shine hvr-grow-shadow"
+              data-burst
+            >
+              <span class="icon-[lucide--message-circle] size-5"></span> Message me on Fiverr
+            </a>
+            <button
+              class="btn btn-ghost btn-lg"
+              data-clipboard-text={profile.portfolioUrl}
+              data-copied="Portfolio link copied"
+            >
+              <span class="icon-[lucide--link] size-5"></span> Copy link
+            </button>
+            <button class="btn btn-ghost btn-lg" data-clipboard-text={profile.fiverr} data-copied="Fiverr link copied">
+              <span class="icon-[lucide--copy] size-5"></span> Copy Fiverr link
+            </button>
+          </div>
+        </div>
+        <div class="mx-auto text-center">
+          <canvas
+            id="qr"
+            width="180"
+            height="180"
+            class="mx-auto size-44 rounded-2xl bg-white"
+            aria-label="QR code that opens this portfolio"
+          ></canvas>
+          <p class="mt-3 text-sm text-base-content/60">Scan to share this page</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

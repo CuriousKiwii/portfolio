@@ -1,0 +1,112 @@
+{
+  "fountain-of-life/gallery-section": {
+    "src": "/images/fountain-of-life/gallery-section.jpg",
+    "thumb": "/images/fountain-of-life/gallery-section-thumb.jpg",
+    "width": 1600,
+    "height": 1000,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQImQG6AEX/AHk6KXU+S1QvKoEWAJAxDL+5ts7c4J2YhaqAZZNwWQBcVXuMdpFdZn02S0ddYFnFtqSjhnLKqo//+fDEqJcA8fOs//uJkeHXRuT/ZuX/hXZkQSwbiXxuuZyQvZmEAO7DWPzjdPPbkdPCs7aQa4h2WVA7JUEmFoNhSHhbPQBeLwOcYjPQi1lfLABPHQDRikjNgz6RbVLWtJviya0AFwkFJRMEY0o8MigjBwIDbz8hOiERKCAgSjs6XUxLLghSvf8qlrcAAAAASUVORK5CYII=",
+    "originalBytes": 304988,
+    "fullBytes": 219615,
+    "thumbBytes": 88406
+  },
+  "fountain-of-life/homepage": {
+    "src": "/images/fountain-of-life/homepage.jpg",
+    "thumb": "/images/fountain-of-life/homepage-thumb.jpg",
+    "width": 1600,
+    "height": 1000,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQImQG6AEX/AEdXcDpYfz9kj012pk50oXWYvIzC7YK9/n19hZF8aABnd491jqypx+fY8f/Ysqvk5/zp+/+Nm7uroZvVtpMATVl1VV5/wMPf7ev/8sSj8MWz1KacbVVUi3dq5MWfABMXMyIgO0ArOlRKWZmSl7SyukdLbg0TOGNZWqmVegAdFyJBLi0tICtHNjCCY0RPPUEbIkAEDi07Nj9tYlMABQMRDQkWAgEVIhsePjIsEhQiDA0fAAMZDhAbIyIlkC1MKNoEKpwAAAAASUVORK5CYII=",
+    "originalBytes": 163217,
+    "fullBytes": 110992,
+    "thumbBytes": 50561
+  },
+  "fountain-of-life/ministries": {
+    "src": "/images/fountain-of-life/ministries.jpg",
+    "thumb": "/images/fountain-of-life/ministries-thumb.jpg",
+    "width": 1600,
+    "height": 1000,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAv0lEQVQImWMoTE1VVtYRlVCQklMXEFcK8PE5dPVR27wdIqLSohIKDFLSqryC0jwC0iqqev9//79/7xk/vxgDA7OgqIKIhCKDiISilo6ZrKKmto5Ja0NjZVGBla2rlr6ljJy6qIQSg6SsamZmvqenj4mpdURUkompta2da1lZrZ2di4SUCkg6KSnTzdXLwtKuoKDM2dnNxtY5MzPf0tIWJC0hpWJhaW9iaq2tY2xhaa9vYK5vYG5p5ahvYCYupQwA5G4stJ7vyxUAAAAASUVORK5CYII=",
+    "originalBytes": 136294,
+    "fullBytes": 79433,
+    "thumbBytes": 32081
+  },
+  "fountain-of-life/showcase-desktop-mobile": {
+    "src": "/images/fountain-of-life/showcase-desktop-mobile.jpg",
+    "thumb": "/images/fountain-of-life/showcase-desktop-mobile-thumb.jpg",
+    "width": 1600,
+    "height": 961,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQImQG6AEX/ABAZJxwqQhcoRRkyVSxBXkJackRVcE1NWD5GWiQwTQAtN0hjfZ9xl8KHoseftNK26v+bttlsX1QQEh8cJTwALTZKbHyc1OT///n4/+XT6NLajXx5fmZjiWZuTUBNAA0TJTApRVJBU4BydbampElDYjMyRn9jWO6eflVAQgAKDRgsHiMiFyFaRTZSQUAPFzMTFyw8Ozw2PEULFSMAAwoXBQ4aBxQhERwnDBQiBQoYAgIODR0oIEVaDR0t4Zc6xetdKlUAAAAASUVORK5CYII=",
+    "originalBytes": 150206,
+    "fullBytes": 102842,
+    "thumbBytes": 46507
+  },
+  "fountain-of-life/showcase-mobile": {
+    "src": "/images/fountain-of-life/showcase-mobile.jpg",
+    "thumb": "/images/fountain-of-life/showcase-mobile-thumb.jpg",
+    "width": 1600,
+    "height": 961,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQImWNg5JBk5pHhFFaXUDazcgpVN/Jg4ZbnkzSS0XSXULVn4BCQF5TSYhdStbN1+//tQWVeUU1CZnZ4AgOzGBevNIOBiX1hXmFsfJaWpoGivJqEsOT/vfMXl2UzsEpw88sw8AjKS8hoGRpZaKprMDCLCwhLuzm6CIsr8QjKs/PKMDAwCDAwi4qIyigrKvLwiqlq6LhlVylY+zCzizKwijEwMPAzMPAzs4tISkppqyvpqitLCAkzMQsxMIswsAoDAKFHHerm9wXPAAAAAElFTkSuQmCC",
+    "originalBytes": 130427,
+    "fullBytes": 88215,
+    "thumbBytes": 40400
+  },
+  "fountain-of-life/showcase-pages": {
+    "src": "/images/fountain-of-life/showcase-pages.jpg",
+    "thumb": "/images/fountain-of-life/showcase-pages-thumb.jpg",
+    "width": 1600,
+    "height": 961,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQImWOI9LLJivHydHJQ17YwtPTVM/UxcwpT1vdQ0vdTNgxg6CxPfXZxZ311lZiE8v/vj/9/f+njEywurSap7q5hGcPgbmcdGxro6OwpLKnhb2sd5eXJJ66pqG6iZOQhpmjJICWtLKtkoKZtqWboyMAiwcDAzcMnrq2tz8Ytxi4ox8DCKaGvZ6amaSyjbMTGIy0kLCMlJS8uLiUpJsUnocrAzCmuoaYrLqXKzCXLyC7BzC7CzivOK6bIJ6UqqGoOABa6JI02TGAQAAAAAElFTkSuQmCC",
+    "originalBytes": 148075,
+    "fullBytes": 98334,
+    "thumbBytes": 43461
+  },
+  "narcisse/narcisse-1-cover": {
+    "src": "/images/narcisse/narcisse-1-cover.jpg",
+    "thumb": "/images/narcisse/narcisse-1-cover-thumb.jpg",
+    "width": 1600,
+    "height": 1200,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAIAAABPmPnhAAAACXBIWXMAAAsTAAALEwEAmpwYAAABA0lEQVQImQH4AAf/AFc9PIZeXTk6OkJCQR4eHgsKCQ4LCw4LChEODREODQBcVlagnJx6e3uLi4tHRkYbFxcsICAnGRgWCAcWCAgAFBISPDAvKikpIB0dHhUVFxYWOiYmSiIiEw0NFwcHABUUFLumpJWSkZuWloRSTlFFRSElJnlnZkIwMA4AAAAQDw9TUlJWWVm+u7zz9fX6+fzn5uizrq2XhYU0ERUADw8PXlNTg3x6ra2sg36EZ2xwqKyqkZGRlJSXUiAhAA0LC3A0MYc+O1NUU3dnaEYfIkIgIkYeIDgUF1AUGAASDAsPAwEQAAAiAwNDDRRrIyKNNy+LNi6SOjCsSDp6UkUU/AqxjAAAAABJRU5ErkJggg==",
+    "originalBytes": 203546,
+    "fullBytes": 125019,
+    "thumbBytes": 62737
+  },
+  "narcisse/narcisse-2-results": {
+    "src": "/images/narcisse/narcisse-2-results.jpg",
+    "thumb": "/images/narcisse/narcisse-2-results-thumb.jpg",
+    "width": 1600,
+    "height": 1200,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAIAAABPmPnhAAAACXBIWXMAAAsTAAALEwEAmpwYAAABA0lEQVQImQH4AAf/AGRLStefn1VRUT4/P0dGRktKSjY0MwYCABAJCA0IBwB+eHf/+PjCwsKfn5+inZuqo6WUg4IlGBgRAAASBQMACwoKJCMjGRcXCQkJCQwMAgkJMiQkVjEwDgQEEQAAAA8ODraysoptbU4sK1RBQI9wbV1FRZWMi52YlRQAAAARDw+DhYWqgoHkeGvRfnn/tan/lIiAZmVyeXkuDxEAFRUVJyYmJCUlIicnHSMjHiUlExoabmBgu5iWXicnABgWFoZ7e2BTUi8jI0o6OF1ISEo0M41aV7dxbYQ5NQAKAgIWCgoSAAAYAAA7DBF3MS+wVkupUUitVErgdmXnhkiH+aumiwAAAABJRU5ErkJggg==",
+    "originalBytes": 153150,
+    "fullBytes": 94881,
+    "thumbBytes": 51451
+  },
+  "narcisse/narcisse-3-sponsors": {
+    "src": "/images/narcisse/narcisse-3-sponsors.jpg",
+    "thumb": "/images/narcisse/narcisse-3-sponsors-thumb.jpg",
+    "width": 1600,
+    "height": 1200,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAIAAABPmPnhAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQImWMoCg5Z1dXpExTk5+vr4eEuLi4mwMcnLCggJiQkJiTEUFta+v/nz227d61au3b6lCkWxiaGqiomSkqSvLySvLwMoiIiOpqaSjIyUsLC8tLSympqgdbW0WZmwnx8ktzcDJKSkpMnTAh3d4uwsbEwMAgLC/Pz8k4KCAiwtZZgY2MQExOrq60qKSmpqa+rqKiY19V5eP68tJhITzc3fUERkOHNTU25ebm1tdW1TY3Tq6pOTOhvrCjrnTjRR1qBQVhQMMTf387KMtTLK9TNLdLLKzcy0kRPz9bGJk9Hm0FMQECAmVmEkVGehcVDVKraxGhtqNf2aP+98UH3ipMA2vNHZaAxBu0AAAAASUVORK5CYII=",
+    "originalBytes": 187698,
+    "fullBytes": 117566,
+    "thumbBytes": 59195
+  },
+  "narcisse/narcisse-4-story": {
+    "src": "/images/narcisse/narcisse-4-story.jpg",
+    "thumb": "/images/narcisse/narcisse-4-story-thumb.jpg",
+    "width": 1600,
+    "height": 1200,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAIAAABPmPnhAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQImWNwVFePtrRUUwcBLS1NZSVFTnZ2bk52Pk4OPk4OBjtLy9yU1OCwsMDAAF8vL3tra3kREUUhQREWZhEWFgZBAQEFOTlJAQFxYREJCQlxCQlTJSUbKSlBDg5RZmYGKSmpitLSsthYRzMTTXVVI10DRwdHCz09aRkZYQYGBhkZmXt3n3779b+9rmf57MUL5iya3tvvYW/vqqWpwcrMIC4ukZWVk5yWHhoclZKSkpyW6u7u5uvuUuHibMvCxSAhJjZr1rzO7r68zNzkyOi9qxb9f/u03tMjVVXVl5ufgZ+DnYeBUYCBQZKBwZCJ2Z9HIFlMNF9KvEZRqklFGgA5LDr5nyzXKwAAAABJRU5ErkJggg==",
+    "originalBytes": 206195,
+    "fullBytes": 131059,
+    "thumbBytes": 63912
+  },
+  "narcisse/narcisse-5-mobile": {
+    "src": "/images/narcisse/narcisse-5-mobile.jpg",
+    "thumb": "/images/narcisse/narcisse-5-mobile-thumb.jpg",
+    "width": 1600,
+    "height": 1200,
+    "blur": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAIAAABPmPnhAAAACXBIWXMAAAsTAAALEwEAmpwYAAABA0lEQVQImQH4AAf/AG1QUJV5eVBVVUtLSxUVFRYWFRYUExcSEhcSEhUREABvamq+ubmPkJBxcHAPDg4VEBAYDw8OBAQSCwoXDw4ACQkJXUBAHxoaDAgIWktKHRsaHBYWenFwOzY1FgYGABgYGPbm5WE+PgwGBn1qah4jIyIZGt3Pz1hVVRsFBQAYGBjKy83//P5EPDuIe3u1a2ciFhZrcXFjZmU3EBQAFxcXraWlpJudJyEhtJ6er3l3OBsdxJOSrH15YCIkAA8ODV8qKkYeIA8HB+OGgKtfWkEWGqVlYIxQTY8/OgAVEBAFAAAHAAAfBgYyCw5jJCWYRT2PPzqtUkfabl0yRUSPwiwMdgAAAABJRU5ErkJggg==",
+    "originalBytes": 174475,
+    "fullBytes": 109804,
+    "thumbBytes": 56231
+  }
+}

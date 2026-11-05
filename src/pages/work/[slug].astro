@@ -1,0 +1,203 @@
+---
+import { Code } from "astro:components";
+import Base from "../../layouts/Base.astro";
+import Img from "../../components/Img.astro";
+import images from "../../data/images.json";
+import snippets from "../../data/snippets.json";
+import metrics from "../../data/narcisse-metrics.json";
+import { projects, techNotes, type Project } from "../../data/site";
+import { u } from "../../lib/url";
+
+export function getStaticPaths() {
+  return projects.map((p, i) => ({
+    params: { slug: p.slug },
+    props: { p, next: projects[(i + 1) % projects.length] },
+  }));
+}
+const { p, next } = Astro.props as { p: Project; next: Project };
+const imgs = images as Record<string, { src: string; width: number; height: number }>;
+const code = (snippets as Record<string, { title: string; lang: string; code: string }[]>)[p.slug] || [];
+
+const architecture: Record<string, string> = {
+  narcissetriano: `flowchart LR
+  Q[Client questionnaire] --> D[(site.ts content file)]
+  P[Race photos] --> S[Sharp: desktop + phone sizes]
+  D --> A[Astro build]
+  S --> A
+  A --> G[GitHub Actions]
+  G --> H[GitHub Pages]
+  H --> N([narcissetriano.com over HTTPS])
+  N --> F[GoFundMe]
+  N --> M[Square merch]
+  N --> C[Contact form]`,
+  "fountain-of-life": `flowchart LR
+  V([Visitor]) --> N[Netlify CDN + HTTPS]
+  N --> H[Hand-coded HTML/CSS/JS]
+  H --> T[Theme toggle + localStorage]
+  H --> R[Scroll reveals]
+  H --> L[Livestream + Watch Online]
+  H --> F[Newsletter form]
+  F --> FN[Netlify Function]
+  FN --> E[(Email list the church owns)]`,
+};
+const kb = (b: number) => Math.round(b / 1024).toLocaleString();
+const t = metrics.totals;
+---
+
+<Base title={`${p.title} | Case study by Noah Thompson`} description={p.summary}>
+  <article>
+    <header class="section py-16 md:py-20">
+      <a href={u("/#work")} class="btn btn-ghost btn-sm -ml-3 hvr-icon-back">
+        <span class="icon-[lucide--arrow-left] size-4"></span> All work
+      </a>
+      <p class="eyebrow mt-6">Case study · {p.when}</p>
+      <h1 class="mt-2 text-4xl font-bold md:text-5xl">{p.title}</h1>
+      <p class="mt-4 max-w-3xl text-lg text-base-content/75">{p.summary}</p>
+      <dl class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="card-surface p-4">
+          <dt class="text-xs tracking-widest text-base-content/50 uppercase">Client</dt>
+          <dd class="mt-1 font-semibold">{p.client}</dd>
+        </div>
+        <div class="card-surface p-4">
+          <dt class="text-xs tracking-widest text-base-content/50 uppercase">Project</dt>
+          <dd class="mt-1 font-semibold">{p.type}</dd>
+        </div>
+        <div class="card-surface p-4">
+          <dt class="text-xs tracking-widest text-base-content/50 uppercase">Live site</dt>
+          <dd class="mt-1 font-semibold">
+            <a class="link link-primary" href={p.url} target="_blank" rel="noopener">
+              {p.urlLabel}
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {p.stack.map((s) => (
+          <span class="badge badge-outline badge-secondary cursor-help" tabindex="0" data-tip={techNotes[s] || s}>
+            {s}
+          </span>
+        ))}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={p.url} target="_blank" rel="noopener" class="btn btn-primary fx-shine" data-burst>
+          Visit {p.urlLabel} <span class="icon-[lucide--external-link] size-4"></span>
+        </a>
+        {p.repo && (
+          <a href={p.repo} target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-brands fa-github"></i> View the code
+          </a>
+        )}
+      </div>
+    </header>
+
+    <section class="section pb-16" aria-label="Screenshots">
+      <div class="grid gap-4 md:grid-cols-2" data-gallery={p.lightbox}>
+        {p.gallery.map((g, i) => {
+          const im = imgs[g];
+          const attrs =
+            p.lightbox === "photoswipe"
+              ? { "data-pswp-width": im.width, "data-pswp-height": im.height }
+              : { "data-spotlight": "", "data-title": p.title };
+          return (
+            <a
+              href={u(im.src)}
+              {...attrs}
+              class:list={[
+                "block overflow-hidden rounded-box ring-1 ring-base-content/10 hvr-grow-shadow",
+                i === 0 ? "md:col-span-2" : "",
+              ]}
+              aria-label={`Open screenshot ${i + 1}`}
+            >
+              <Img id={g} alt={`${p.title} screenshot ${i + 1}`} full={i === 0} eager={i === 0} class="w-full" />
+            </a>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="bg-base-200 py-16">
+      <div class="section grid gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div data-reveal>
+          <p class="eyebrow">What I built</p>
+          <h2 class="mt-2 text-3xl font-bold">Highlights</h2>
+          <ul class="mt-6 space-y-3">
+            {p.highlights.map((h) => (
+              <li class="flex gap-3">
+                <span class="icon-[lucide--circle-check] mt-0.5 size-5 shrink-0 text-primary"></span>
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="card-surface overflow-x-auto bg-base-100 p-6" data-reveal>
+          <p class="mb-4 text-sm font-semibold tracking-widest text-base-content/60 uppercase">How it fits together</p>
+          <pre class="mermaid min-w-[560px]">{architecture[p.slug]}</pre>
+        </div>
+      </div>
+    </section>
+
+    {p.slug === "narcissetriano" && (
+      <section class="section py-16" aria-labelledby="perf-title">
+        <div data-reveal>
+          <p class="eyebrow">Performance</p>
+          <h2 id="perf-title" class="mt-2 text-3xl font-bold">
+            Fast on phones, by design
+          </h2>
+          <p class="mt-3 max-w-3xl text-base-content/75">
+            The client's photos arrived as {kb(t.original)} KB of screenshots. The build turns them into {kb(t.desktop)}{" "}
+            KB for desktop and {kb(t.mobile)} KB for phones, about {Math.round((1 - t.mobile / t.original) * 100)}%
+            smaller for mobile visitors.
+          </p>
+        </div>
+        <div class="mt-8 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+          <div class="card-surface p-4" data-reveal>
+            <p class="px-2 pt-2 text-sm font-semibold">Photo weight, per image (ECharts)</p>
+            <div data-echart class="h-96 w-full"></div>
+          </div>
+          <div class="card-surface p-4" data-reveal>
+            <p class="px-2 pt-2 text-sm font-semibold">What a phone downloads on the homepage (Chartist)</p>
+            <div data-chartist class="ct-chart h-80 w-full"></div>
+            <p class="px-2 text-xs text-base-content/50">
+              Measured with Playwright on a 390px phone at 3x pixel density.
+            </p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    {code.length > 0 && (
+      <section class="section py-16" aria-labelledby="code-title">
+        <p class="eyebrow">Under the hood</p>
+        <h2 id="code-title" class="mt-2 text-3xl font-bold">
+          A few lines from the real code
+        </h2>
+        <div class="mt-8 grid gap-6">
+          {code.map((c) => (
+            <figure class="card-surface overflow-hidden" data-reveal>
+              <figcaption class="border-b border-base-content/10 px-5 py-3 text-sm font-semibold">{c.title}</figcaption>
+              <Code
+                code={c.code}
+                lang={c.lang as any}
+                themes={{ light: "github-light", dark: "github-dark" }}
+                class="!m-0 !rounded-none p-5 text-sm"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <nav class="section pb-20" aria-label="Next project">
+      <a
+        href={u(`/work/${next.slug}/`)}
+        class="card-surface group flex items-center justify-between gap-6 p-6 hvr-grow-shadow"
+      >
+        <div>
+          <p class="eyebrow">Next project</p>
+          <p class="mt-1 text-2xl font-bold">{next.title}</p>
+        </div>
+        <span class="icon-[lucide--arrow-right] size-8 text-primary transition group-hover:translate-x-1"></span>
+      </a>
+    </nav>
+  </article>
+</Base>

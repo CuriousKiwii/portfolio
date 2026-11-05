@@ -1,0 +1,164 @@
+{
+ "sheetsById": {
+  "Hero": {
+   "staticOverrides": {
+    "byObject": {}
+   },
+   "sequence": {
+    "subUnitsPerUnit": 30,
+    "length": 4,
+    "type": "PositionalSequence",
+    "tracksByObject": {
+     "Card": {
+      "trackData": {
+       "ty": {
+        "type": "BasicKeyframedTrack",
+        "__debuggingObjectKey": "Card",
+        "keyframes": [
+         {
+          "id": "a1",
+          "position": 0,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 0
+         },
+         {
+          "id": "a2",
+          "position": 2,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": -14
+         },
+         {
+          "id": "a3",
+          "position": 4,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 0
+         }
+        ]
+       },
+       "tr": {
+        "type": "BasicKeyframedTrack",
+        "__debuggingObjectKey": "Card",
+        "keyframes": [
+         {
+          "id": "b1",
+          "position": 0,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": -2
+         },
+         {
+          "id": "b2",
+          "position": 2,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 2
+         },
+         {
+          "id": "b3",
+          "position": 4,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": -2
+         }
+        ]
+       },
+       "tg": {
+        "type": "BasicKeyframedTrack",
+        "__debuggingObjectKey": "Card",
+        "keyframes": [
+         {
+          "id": "c1",
+          "position": 0,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 0.25
+         },
+         {
+          "id": "c2",
+          "position": 2,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 0.7
+         },
+         {
+          "id": "c3",
+          "position": 4,
+          "connectedRight": true,
+          "handles": [
+           0.5,
+           1,
+           0.5,
+           0
+          ],
+          "type": "bezier",
+          "value": 0.25
+         }
+        ]
+       }
+      },
+      "trackIdByPropPath": {
+       "[\"y\"]": "ty",
+       "[\"rotate\"]": "tr",
+       "[\"glow\"]": "tg"
+      }
+     }
+    }
+   }
+  }
+ },
+ "definitionVersion": "0.4.0",
+ "revisionHistory": [
+  "portfolio-v1"
+ ]
+}

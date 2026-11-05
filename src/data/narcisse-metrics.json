@@ -1,0 +1,71 @@
+{
+ "images": [
+  {
+   "name": "hero",
+   "original": 1478547,
+   "desktop": 196315,
+   "mobile": 64218
+  },
+  {
+   "name": "headshot",
+   "original": 1270366,
+   "desktop": 110176,
+   "mobile": 69618
+  },
+  {
+   "name": "podium",
+   "original": 2154383,
+   "desktop": 254406,
+   "mobile": 118850
+  },
+  {
+   "name": "laguna-pits",
+   "original": 1947933,
+   "desktop": 240102,
+   "mobile": 112779
+  },
+  {
+   "name": "sonoma-888-a",
+   "original": 947318,
+   "desktop": 111526,
+   "mobile": 48010
+  },
+  {
+   "name": "in-car",
+   "original": 2047048,
+   "desktop": 231079,
+   "mobile": 110259
+  },
+  {
+   "name": "sonoma-888-b",
+   "original": 627828,
+   "desktop": 75417,
+   "mobile": 33982
+  },
+  {
+   "name": "practice-car",
+   "original": 642139,
+   "desktop": 79999,
+   "mobile": 35039
+  }
+ ],
+ "totals": {
+  "original": 11115562,
+  "desktop": 1299020,
+  "mobile": 592755
+ },
+ "build": {
+  "HTML": 90763,
+  "CSS": 43629,
+  "JavaScript": 0,
+  "Fonts": 764156,
+  "Images": 2139474
+ },
+ "mobileLoad": {
+  "HTML": 7958,
+  "CSS": 7723,
+  "JavaScript": 0,
+  "Fonts": 150912,
+  "Images": 1331372
+ }
+}

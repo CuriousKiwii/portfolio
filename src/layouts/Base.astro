@@ -1,0 +1,108 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { profile } from "../data/site";
+import { u } from "../lib/url";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+const {
+  title = `${profile.name} | Web & IT for Small Businesses, Churches, and Nonprofits`,
+  description = `${profile.name} builds fast, secure websites and handles IT for small businesses, churches, and nonprofits. Based in ${profile.location}.`,
+  image = "/og.jpg",
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(u(image), Astro.site);
+---
+
+<!doctype html>
+<html lang="en" data-theme="goodground" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={u("/favicon.svg")} />
+    <meta name="theme-color" content="#0b1220" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- jsDelivr CDN: Font Awesome brand icons (pinned + Subresource Integrity) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/fontawesome.min.css"
+      integrity="sha384-m8DKa0MtZAZlyNgF18TSkQRYTPDY0sEELpwK2YijfYnVFH8kxiaO6hvopM168nue"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/brands.min.css"
+      integrity="sha384-pIEnzgIAdkjnrjeHT4EuN7Kq2yGdMr3Vk0e3gLOkA7/e07sPVkOqclXo09iTJVEo"
+      crossorigin="anonymous"
+    />
+    <!-- jsDelivr CDN: Ionicons web components (pinned version) -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@8.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <script is:inline>
+      // Theme before paint (saved choice, else device setting), and flags for no-JS / reduced motion.
+      (() => {
+        const d = document.documentElement;
+        d.classList.remove("no-js");
+        try {
+          const saved = localStorage.getItem("gg-theme");
+          const light = window.matchMedia("(prefers-color-scheme: light)").matches;
+          d.dataset.theme = saved || (light ? "goodground-light" : "goodground");
+        } catch {}
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("reduced");
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <!-- SpinKit preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[100] grid place-items-center bg-base-100 transition-opacity duration-500"
+      aria-hidden="true"
+    >
+      <div class="sk-chase" style="--sk-color: var(--color-primary); --sk-size: 44px;">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+    </div>
+
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[90] btn btn-primary btn-sm"
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <div id="tooltip" class="tip" role="tooltip">
+      <span id="tooltip-text"></span>
+      <div class="tip-arrow" data-popper-arrow></div>
+    </div>
+
+    <script>
+      import "../scripts/main";
+    </script>
+  </body>
+</html>

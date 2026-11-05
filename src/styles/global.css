@@ -1,0 +1,268 @@
+/* ---------------------------------------------------------------
+   Base layer
+   sanitize.css: consistent cross-browser defaults (CC0)
+   Tailwind CSS + daisyUI: utilities and components
+   Iconify (Tailwind plugin): Lucide + Simple Icons, bundled offline
+---------------------------------------------------------------- */
+@import "sanitize.css" layer(base);
+@import "@fontsource-variable/inter";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/700-italic.css";
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "goodground";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0b1220;
+  --color-base-200: #111a2e;
+  --color-base-300: #1a2540;
+  --color-base-content: #eef2f8;
+  --color-primary: #f0a23b;
+  --color-primary-content: #1b1205;
+  --color-secondary: #3bb6e8;
+  --color-secondary-content: #04121a;
+  --color-accent: #f0a23b;
+  --color-accent-content: #1b1205;
+  --color-neutral: #141e33;
+  --color-neutral-content: #eef2f8;
+  --color-info: #3bb6e8;
+  --color-success: #34d399;
+  --color-warning: #f59e0b;
+  --color-error: #f87171;
+  --radius-selector: 1rem;
+  --radius-field: 0.6rem;
+  --radius-box: 1.1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+@plugin "daisyui/theme" {
+  name: "goodground-light";
+  color-scheme: light;
+  --color-base-100: #f7f8fb;
+  --color-base-200: #eef1f6;
+  --color-base-300: #e2e7ef;
+  --color-base-content: #0b1220;
+  --color-primary: #c97a12;
+  --color-primary-content: #ffffff;
+  --color-secondary: #1c8bbe;
+  --color-secondary-content: #ffffff;
+  --color-accent: #c97a12;
+  --color-accent-content: #ffffff;
+  --color-neutral: #e9edf4;
+  --color-neutral-content: #0b1220;
+  --color-info: #1c8bbe;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --radius-selector: 1rem;
+  --radius-field: 0.6rem;
+  --radius-box: 1.1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+@plugin "@iconify/tailwind4";
+
+/* Hand-picked effects (each file credits its source) */
+@import "./vendor/hover-subset.css" layer(components);
+@import "./vendor/cssfx.css" layer(components);
+@import "./vendor/clay.css" layer(components);
+@import "./vendor/css-loaders-load1.css" layer(components);
+@import "spinkit/spinkit.min.css" layer(components);
+@import "instagram.css/dist/instagram.min.css" layer(components);
+@import "animate.css/source/_vars.css" layer(components);
+@import "animate.css/source/_base.css" layer(components);
+@import "animate.css/source/fading_entrances/fadeInUp.css" layer(components);
+@import "animate.css/source/attention_seekers/pulse.css" layer(components);
+@import "animate.css/source/attention_seekers/headShake.css" layer(components);
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.2em] text-primary uppercase;
+  }
+  .card-surface {
+    @apply rounded-box border border-base-content/10 bg-base-200;
+  }
+
+  /* Soft-UI shadows generated with neumorphism.io (distance 12, blur 24, intensity 0.15) */
+  .neu {
+    background: #141e33;
+    box-shadow:
+      12px 12px 24px #11192b,
+      -12px -12px 24px #17223a;
+  }
+  [data-theme="goodground-light"] .neu {
+    background: #eef1f6;
+    box-shadow:
+      12px 12px 24px #caccd1,
+      -12px -12px 24px #ffffff;
+  }
+  .neu-inset {
+    box-shadow:
+      inset 6px 6px 12px #0c1424,
+      inset -6px -6px 12px #18233c;
+  }
+  [data-theme="goodground-light"] .neu-inset {
+    box-shadow:
+      inset 6px 6px 12px #caccd1,
+      inset -6px -6px 12px #ffffff;
+  }
+
+  /* clay.css tuned to the brand */
+  .clay {
+    --clay-background: color-mix(in oklab, var(--color-base-200) 92%, var(--color-primary));
+    --clay-border-radius: 28px;
+    --clay-shadow-outset: 8px 8px 16px 0 rgba(0, 0, 0, 0.35);
+    --clay-shadow-inset-primary: -8px -8px 16px 0 rgba(0, 0, 0, 0.3);
+    --clay-shadow-inset-secondary: 8px 8px 16px 0 rgba(255, 255, 255, 0.06);
+  }
+  [data-theme="goodground-light"] .clay {
+    --clay-shadow-outset: 8px 8px 16px 0 rgba(15, 23, 42, 0.12);
+    --clay-shadow-inset-primary: -8px -8px 16px 0 rgba(15, 23, 42, 0.08);
+    --clay-shadow-inset-secondary: 8px 8px 16px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* Reveal-on-scroll starting state (Motion animates it in) */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .no-js [data-reveal],
+  .reduced [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Blur-up images (Plaiceholder + vanilla-lazyload) */
+  img.lazy {
+    filter: blur(14px);
+    transform: scale(1.03);
+    transition:
+      filter 0.6s ease,
+      transform 0.6s ease;
+  }
+  img.lazy.loaded {
+    filter: none;
+    transform: none;
+  }
+
+  /* Popper tooltip */
+  .tip {
+    @apply z-50 hidden max-w-60 rounded-lg bg-base-content px-3 py-2 text-xs text-base-100 shadow-lg;
+  }
+  .tip[data-show] {
+    display: block;
+  }
+  .tip-arrow,
+  .tip-arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: inherit;
+  }
+  .tip-arrow {
+    visibility: hidden;
+  }
+  .tip-arrow::before {
+    visibility: visible;
+    content: "";
+    transform: rotate(45deg);
+  }
+  .tip[data-popper-placement^="top"] > .tip-arrow {
+    bottom: -4px;
+  }
+  .tip[data-popper-placement^="bottom"] > .tip-arrow {
+    top: -4px;
+  }
+
+  /* Odometer inherits the stat font */
+  .odometer.odometer-auto-theme,
+  .odometer.odometer-theme-minimal {
+    font-family: var(--font-display);
+    line-height: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-js [data-word] {
+  opacity: 1;
+}
+
+/* Dark map tiles in dark mode (Leaflet) */
+[data-theme="goodground"] #map .leaflet-tile {
+  filter: invert(1) hue-rotate(200deg) brightness(0.85) contrast(0.9) saturate(0.6);
+}
+[data-theme="goodground"] #map .leaflet-container {
+  background: #0b1220;
+}
+
+/* Shiki (Astro <Code>) dual themes follow the site theme */
+[data-theme="goodground"] .astro-code,
+[data-theme="goodground"] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+/* Chartist colors */
+.ct-label {
+  color: color-mix(in oklab, var(--color-base-content) 70%, transparent);
+  fill: currentColor;
+}
+.ct-grid {
+  stroke: color-mix(in oklab, var(--color-base-content) 15%, transparent);
+}
+.ct-chart .ct-series-a .ct-bar {
+  stroke: var(--color-secondary);
+  stroke-width: 22px;
+}
